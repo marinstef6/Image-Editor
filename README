@@ -1,0 +1,43 @@
+#Marin Stefania,311CA
+
+Acest program ajuta la editarea imaginilor.Cu ajutorul mai multor functii, acest lucru va fi posibil.
+Voi incepe cu functia main.Aici am un buffer care va retine numele fiecarei comenzi. 
+Am o structura desen in care am dimensiuni matricei, doua matrici:una pentru color si una pentru gri
+cu ajutorul careia voi calcula ce se va cere. Variabila e, este folosita in cazul in care un subprogram 
+nu merge.Acesta va fi intializat cu 1 in fiecare subprogram,iar daca nu merge va iesi de acolo.
+Am doua structuri in care se afla enumeratii.Aceste sunt folosite:una pentru comenzi si una pentru cele 
+doua tipuri de matrici.Celelalte structuri sunt folosite pentru variabile de lungime,latime sau pentru
+tipuri de culori(rosu,verde,albastru).
+Urmatoarea functie dupa structuri este cea care ma ajuta sa calculez valoarea in modul.
+Functia minint ajuta la calcularea minimului,iar functia de maxim la calcularea maximului dintre doua
+numere.Urmatoarea structura,init_desen contine variabile initializate cu 0.
+Cu ajutorul functiei char_alloc_mat, voi aloca dinamic o matrice monocroma,iar functia alloc_mat_RGB
+va aloca o matrice color.
+Unload_image este folosita pentru a elibera o matrice.O voi folosit cand voi apela functia EXIT pentru
+a elibera toata memoria.
+Clamp e o functie care returneaza minimul,maximul sau numarul cu care intra in functie de conditii.
+In apply_kernel voi calcula suma unor matrice color apoi le voi imparti in functie de apel.
+Apelul ei este in functia interpret_apply unde in functie de numele dupa APPLY va diferi si div.
+Variabila div imparte suma.
+Interpret_load este o functie care ne ajuta sa incarcam in memorie o imagine.In functie de c,variabila c
+fiind cea in care se va memora numarul dupa P,vom avea fisier cu extensia pgm sau ppm.
+In rest se memoreaza tipul de fisier(P2,P3,P5,P6), iar c va memora doar numarul cum am spus si 
+mai sus.In interpret_save voi salva imaginea in memorie.Daca dupa ce vom rula comanda "SAVE imagine"vom
+avea doua posibilitati:daca avem cuvantul "ascii" imaginea va fi pgm(P2,P5),iar daca nu punem nimic
+imaginea va fi de tip binar(P3,P6).
+Interpret_exit ne ajuta sa iesim din program.Memoria se va elibera si se va afisa un mesaj daca imaginea
+nu a fost incarcata.
+Interpret_select va avea doua posibilitati:dupa comanda SELECT putem avea ALL care selecteaza toata
+imaginea,sau putem avea niste coordonate.In functie de ele se vor afisa diverse mesaje.
+Interpret_crop este legata de SELECT.Dupa ce am selectat cat avem nevoie dintr-o imagine,CROP ne va 
+duce imaginea la acele dimensiuni.
+Functia flip_oriz_vert folosesc pentru functia rotate,pentru unghiul de +/-180.
+Functia flip_oriz_vert_nsqr o folosesc pentru matrici nepatratice.
+Functia rotate_90 este pentru rotatiile de 90/-270 de grade,iar rotate_270 pentru rotatiile 270/-90.
+Functia interpret_rotate ajuta la rotatia imaginii in functie de ce unghi va fi citit.
+Functia sum_histogram calculeaza o suma cu ajutorul unei aparatii a unui numar,si un element din matrice.
+Functia interpret_equalize ajuta la egalizarea valorilor din histograma.
+Iar functia interpret_histogram calculeaza freceventa unor valori si le pune intr-un fel de diagrama.
+Ultima functie,interpret va apela fiecare functie,contand doar primele 2 litere din comada pentru a face 
+diferenta intr comenzi.
+
